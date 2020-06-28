@@ -1,0 +1,36 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "prettier",
+        "prettier/react",
+        "plugin:react/recomended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "prettier",
+        "react-hooks"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "es6",
+                "singleQuote": true,
+                "semi": true,
+                "endOfLine": "auto"
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    }
+}
