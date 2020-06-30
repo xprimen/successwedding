@@ -1,0 +1,401 @@
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+// Start with assigning color names to specific hex values.
+//
+// Color system
+//
+@import './colors.scss';
+@import './loader.scss';
+/* @import url("https://fonts.googleapis.com/css?family=Pacifico&swap"); */
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+// Reassign color vars to semantic color scheme
+$theme-colors: (
+		primary: $primary,
+		secondary: $gray-600,
+		success: $green,
+		info: $cyan,
+		warning: $yellow,
+		danger: $red,
+		light: $gray-100,
+		dark: $gray-800
+	)
+	!default;
+// Options
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+// Grid containers
+// Define the maximum width of `.container` for different screen sizes.
+// $container-max-widths: (sm: 540px, md: 640px, lg: 710px, xl: 780px) !default;
+// Body
+// Settings for the `<body>` element.
+$body-bg: lighten($pink, 20%) !default; // $white !default;
+$body-color: $gray-700 !default;
+$inverse-bg: $gray-900 !default;
+$inverse-color: $gray-600 !default;
+// Links
+// Style anchor elements.
+$link-decoration: none !default;
+$link-hover-decoration: none !default;
+// Enable Responsive Font Size
+$enable-responsive-font-sizes: true !default;
+// Fonts
+@import './fonts.scss';
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+html {
+	scroll-behavior: smooth;
+}
+html,
+body {
+	height: 100%;
+	width: 100%; // background-color: lighten($pink, 20%) !important;
+}
+header {
+	nav {
+		/* background-color: rgba(255, 255, 255, 0.6); */
+		background-color: rgba(0, 0, 0, 0.6);
+		@include transition(height 0.8s ease);
+		&#navbar-top {
+			height: 90px;
+			&.shrink {
+				background-color: rgba(0, 0, 0, 0.4);
+				height: 60px;
+				@include transition(height 0.4s linear);
+				li.nav-item {
+					a {
+						text-shadow: 0px 0px 1px #ffffff;
+						img.logo {
+							height: 50px;
+						}
+					}
+				}
+			}
+			li.nav-item {
+				align-self: center;
+				a {
+					/* color: #ffffff !important;
+            text-shadow: 2px 1px 1px #666666; */
+					/* color: #b3994b !important; */
+					color: $pink !important;
+					text-shadow: 0px 0px 13px #ffffff;
+					font-family: Calibri, Verdana;
+					font-size: 1.2em;
+					text-transform: uppercase;
+					&:hover {
+						color: lighten($pink, 50%) !important;
+						/* color:#000 !important; */
+						text-shadow: 1px 1px 5px #fff;
+						@include transition(color 0.6s ease-out);
+					}
+					img.logo {
+						height: 80px;
+					}
+				}
+			}
+		}
+		&#navbar-small {
+			&.bg-dark {
+				background-color: rgba(0, 0, 0, 0.8) !important;
+			}
+			.logo-text {
+				color: #e3bc9a !important;
+			}
+		}
+	}
+}
+.img-bg {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* height: inherit; */
+}
+.layer-overlay {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.parallax {
+	/* Set a specific height */
+	height: 100%;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; /* padding-top:0 !important;
+		padding-bottom:0 !important; */
+	&:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.3);
+		z-index: 1;
+	}
+	> .bg-blur {
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		position: absolute;
+	}
+}
+#who h1,
+#why h1,
+#services h1,
+#home-product h1,
+#testimoni h1,
+#contact-now h1 {
+	font-family: Calibri, Verdana;
+	font-size: 3em;
+	color: darken($pink, 20%);
+	text-transform: uppercase;
+}
+#contact-now {
+	background-color: lighten($pink, 10%);
+}
+#who {
+	background-color: lighten($pink, 15%);
+	.cta-btn {
+		@include transition(height 0.8s ease);
+	}
+}
+#services {
+	background-color: lighten($pink, 20%);
+	.services-list li {
+		font-size: 24px;
+		> span {
+			background-color: #e3bc9a;
+			border-radius: 50%;
+			text-align: center;
+			font-size: 20px;
+			margin-right: 10px;
+			padding: 13px;
+		}
+	}
+}
+#home-product {
+	background-color: lighten($pink, 15%);
+	.card {
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+}
+#testimoni {
+	-webkit-box-shadow: inset 0px 0px 40px -5px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: inset 0px 0px 40px -5px rgba(0, 0, 0, 0.75);
+	box-shadow: inset 0px 0px 40px -5px rgba(0, 0, 0, 0.75);
+	hr {
+		height: 2px;
+		background-color: #fff3eb;
+		width: 25%;
+	}
+}
+#gallery {
+	h1:nth-child(1) {
+		font-size: 42px;
+		font-weight: normal;
+		color: darken($pink, 10%);
+		display: flex;
+		flex-basis: 100%;
+		align-items: center;
+		margin-bottom: 1em;
+		&:before,
+		&:after {
+			content: "";
+			flex-grow: 1;
+			border-width: 1px;
+			border-style: solid;
+			height: 1px;
+			font-size: 0px;
+			line-height: 0px;
+			margin: 0px 25px;
+		}
+	}
+}
+#product {
+	h1:nth-child(1) {
+		font-size: 42px;
+		font-weight: normal;
+		color: darken($pink, 10%);
+		display: flex;
+		flex-basis: 100%;
+		align-items: center;
+		margin-bottom: 1em;
+		&:before,
+		&:after {
+			content: "";
+			flex-grow: 1;
+			border-width: 1px;
+			border-style: solid;
+			height: 1px;
+			font-size: 0px;
+			line-height: 0px;
+			margin: 0px 25px;
+		}
+	}
+	.card {
+		.card-body {
+			background-color: lighten($pink, 20%);
+			.card-title {
+				color: darken($pink, 40%);
+				font-weight: normal;
+			}
+		}
+	}
+}
+#page {
+	h1:nth-child(1) {
+		font-size: 42px;
+		font-weight: normal;
+		color: darken($pink, 10%);
+		display: flex;
+		flex-basis: 100%;
+		align-items: center;
+		margin-bottom: 1em;
+		&:before,
+		&:after {
+			content: "";
+			flex-grow: 1;
+			border-width: 1px;
+			border-style: solid;
+			height: 1px;
+			font-size: 0px;
+			line-height: 0px;
+			margin: 0px 25px;
+		}
+	}
+	#content {
+		&.tentang,
+		&.kontak {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+		img.img-thumbnail {
+			border: none;
+			position: relative;
+			box-shadow: inset -20px -20px 20px 5px $pink;
+		}
+		/* h2:nth-child(1) {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    } */
+		.panel {
+			.panel-heading {
+				border-top: 1px solid $pink;
+				padding: 15px 0;
+				font-style: italic;
+			}
+		}
+		.service-title,
+		.service-description {
+			padding: 3rem 2rem;
+		}
+		.service-title {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: lighten($pink, 10%);
+			p:nth-child(1),
+			p:nth-child(3) {
+				font-size: 5em;
+				font-size: 1.5em;
+			}
+			p:nth-child(2) {
+				font-size: 5em;
+				color: darken($pink, 20%);
+			}
+		}
+	}
+}
+#footer {
+	background-color: $pink;
+	// nav {
+	a {
+		font-family: Calibri, Verdana;
+		font-size: 1.5em;
+		color: #353535;
+		&:hover {
+			color: #fff3eb;
+		}
+	}
+	// }
+	hr {
+		border: #fff solid 2px;
+		padding: 0;
+		margin: 15px auto;
+		width: 25%;
+	}
+	.desc {
+		color: inherit;
+	}
+	.logo-wrapper {
+		text-align: center;
+		img {
+			border-radius: 50%;
+			background-color: rgba(0, 0, 0, 1);
+			text-align: center;
+			padding: 15px; /* box-shadow: 0px 5px 2px #000; */
+		}
+	}
+	.socmed-list {
+		margin-top: 0 !important;
+		li {
+			a {
+				color: #353535;
+				font-size: 36px;
+			}
+		}
+	}
+}
+@keyframes fadeInImg {
+	from {
+		opacity: 0;
+	}
+	to {
+		opactity: 1;
+	}
+}
+.img-loading {
+	opacity: 0;
+	width: 100%;
+	height: auto;
+	filter: blur(15px);
+}
+.img-loaded {
+	animation: fadeInImg cubic-bezier(0.23, 1, 0.32, 1) 1;
+	position: relative;
+	filter: blur(0);
+	transition: filter .3s;
+	opacity: 1;
+	/* animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+  animation-delay: 0.1s; */
+}
+/* * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+} */
+/* p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+img {
+  margin-bottom: 15px;
+  max-width: 100%;
+}
+
+img:hover {
+  animation: pulse 0.5s;
+} */
