@@ -138,7 +138,7 @@ const ButtonToTop = ({ show }) => {
         window.scroll(0, 0)
       }}
     >
-      <i className="fas fa-chevron-up"></i>
+      <i className="fa fa-chevron-up" aria-hidden="true"></i>
     </Button>
   )
 }

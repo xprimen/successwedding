@@ -45,9 +45,9 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `#e3bc9a`,
+        color: `tomato`,
         // Disable the loading spinner.
-        showSpinner: true,
+        showSpinner: false,
       },
     },
     {
@@ -61,7 +61,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#E3BC9A`,
         display: `standalone`,
-        icon: `https://www.rks.co.id/successwedding.id/assets/img/logo/icon/favicon.png`,
+        icon: `src/assets/img/logo/logo.png`,
         /* icons: [
           {
             src: `/img/android-chrome-192x192.png`,
@@ -78,6 +78,7 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
+    `gatsby-plugin-catch-links`
   ],
 }
