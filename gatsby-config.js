@@ -4,7 +4,7 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
-  pathPrefix:'/',
+  pathPrefix:`/`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -30,7 +30,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-create-client-paths',
+      resolve: `gatsby-plugin-create-client-paths`,
       options: {
         prefixes: [`/product/*`, `/blog/*`, `/page/*`],
       },
@@ -53,25 +53,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Success Wedding',
-        short_name: 'Success',
-        description: 'Success Wedding Organizer',
-        homepage_url: 'http://www.successwedding.id',
-        start_url: '/',
-        background_color: '#fff',
-        theme_color: '#E3BC9A',
-        display: 'standalone',
-        icon: 'https://www.rks.co.id/successwedding.id/assets/img/logo/icon/favicon.png',
+        name: `Success Wedding`,
+        short_name: `Success`,
+        description: `Success Wedding Organizer`,
+        homepage_url: `http://www.successwedding.id`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#E3BC9A`,
+        display: `standalone`,
+        icon: `https://www.rks.co.id/successwedding.id/assets/img/logo/icon/favicon.png`,
         /* icons: [
           {
-            src: '/img/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: `/img/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
           },
           {
-            src: '/img/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: `/img/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
           },
         ], */
       },
