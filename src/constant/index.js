@@ -22,11 +22,11 @@ export const actionType = {
   TESTIMONI_SUCCESS: 'TESTIMONI_SUCCESS',
 }
 
-export const base_url =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost/successwedding'
-    : 'https://www.rks.co.id/successwedding.id'
-// export const base_url = 'https://www.rks.co.id/successwedding.id';
+// export const base_url =
+//   process.env.NODE_ENV === 'development'
+//     ? 'http://localhost/successwedding'
+//     : 'https://www.rks.co.id/successwedding.id'
+export const base_url = 'https://www.rks.co.id/successwedding.id';
 
 const prod = {
   url: {
@@ -37,8 +37,8 @@ const prod = {
 }
 const dev = {
   url: {
-    API_URL: base_url + '/api/api',
-    // API_URL: base_url + '/secure/api',
+    // API_URL: base_url + '/api/api',
+    API_URL: base_url + '/secure/api',
     ASSETS_URL: '../../',
   },
   webdata: 1,
